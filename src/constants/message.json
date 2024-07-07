@@ -1,0 +1,18 @@
+{
+    "MESSAGES": {
+        "VERIFY": {
+            "AUTHOR": "#e:clientDB **[autor]**, espera um pouco ai!\n> - #loading Antes de tudo, você deve utilizar o comando `[comando]` para poder desbloquear todo o resto.",
+            "MENTION": "#e:clientDB **[autor]**, eu vou parar por aqui.\n> - **[mencao]** ainda __não desbloqueou__ os meus comandos...#killuaBaby"
+        },
+        "BLACKLIST": {
+            "AUTHOR": "#clientError **› Acesso negado!** [autor], você foi **banido(a) permanentemente** da experiência!\n- 📃 **› motivo do banimento**: `[reason]`",
+            "MENTION": "#clientError **› Acesso negado!** [autor],o usuário **`[mention]`** foi **banido(a) permanentemente** da experiência!\n- 📃 **› motivo do banimento**: `[reason]`"
+        },
+        "PERMISSION": {
+            "AUTHOR": "#clientError **› [autor]**, você não possui as **permissões necessárias** para executar esse comando: [permissoes]",
+            "CLIENT": "#clientError **› [autor]**, eu não tenho as **permissões necessárias** para executar esse comando: [permissoes]"
+        },
+        
+        "COOLDOWN": "⏰ **›**[autor] **Wow, foi mal ai!!** mas, se pá eu irei descançar um pouquinho. <t:[cooldown]:R>"
+    }
+}
