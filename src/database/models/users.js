@@ -14,7 +14,8 @@ const usersModel = new Schema({
     vip: { type: Boolean, default: false },
     vipExpires: { type: Date, default: null },
     
-    cards: { type: Number, default: 0 },
+    chip: { type: Number, default: 100 },
+    krez: { type: Number, default: 1000 },
     daily_time: { type: Number, default: 0 },
     daily_progress: { type: Boolean, default: false },
 
