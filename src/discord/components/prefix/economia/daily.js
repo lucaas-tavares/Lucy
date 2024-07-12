@@ -21,13 +21,13 @@ async function disableButtons(interaction) {
 }
 
 async function handleInteraction(client, interaction, buttonName) {
-    const user = await User.findOne({ _id: interaction.user.id });
+    const userDB = await User.findOne({ _id: interaction.user.id });
     const { amount, value70, value30, message } = dailyValues(buttonName);
 
-    user.cards += value30;
-    user.daily_time = Date.now();
-    user.daily_progress = false;
-    await user.save();
+    userDB.chip += value30;
+    userDB.daily_time = Date.now();
+    userDB.daily_progress = false;
+    await userDB.save();
 
     await interaction.reply(client.FormatEmoji(message));
     await disableButtons(interaction);
