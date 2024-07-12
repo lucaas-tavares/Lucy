@@ -5,17 +5,17 @@ const Botao = require('../../../../functions/buttonCreate');
 module.exports = {
   name: "registrar",
   description: "🌹 Atravesse o portal para utilizar meus comandos.",
-  category: "special",
+  category: "especial",
 
-  run: async (client, message, args) => {
-    let userData = await User.findOne({ _id: message.author.id });
+  run: async (client, message) => {
+    let userDB = await User.findOne({ _id: message.author.id });
 
-    if (userData) {
+    if (userDB) {
       return message.reply(client.FormatEmoji('#e:clientError **O que foi?** você realmente acha que pode se registrar denovo? ksksks fof@.'));
     }
 
     const button = Botao([
-      { label:"Ver itens", emoji:"👀", customId:`[button, ${message.author.id}]`, style: 2, }
+      { label:"Ver Recompensas", emoji:"👀", customId:`[register-view, ${message.author.id}]`, style: 2, }
     ])
     const initialMessage = await message.reply({ content: client.FormatEmoji(`#e:davidCP ${message.author}, estou computando suas informações.\n> - 😥 Isso exige muito de mim, então, pode demorar um pouco, até lá é melhor você aguenta o coração ai...`) });
 
@@ -25,7 +25,7 @@ module.exports = {
 
     setTimeout(async () => {
       await initialMessage.edit({
-        content: client.FormatEmoji(`#e:lucyChibi ${message.author}, tudo pronto desse lado! Aqui, pode levar essas **3 coisas**.\n> - #catBlush Ei, faça bom uso dos meus comandos e desfrute ao máximo da experiência.`),
+        content: client.FormatEmoji(`#e:lucyChibi ${message.author}, tudo pronto desse lado! Aqui, irei lhe dar **3 coisas**.\n> - #catBlush Ei, faça bom uso dos meus comandos e desfrute ao máximo da experiência.`),
         components: [button]
       });
 
