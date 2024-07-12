@@ -16,11 +16,11 @@ module["exports"] = {
                 new Discord.ButtonBuilder()
                 .setLabel('Servidor de Suporte')
                 .setStyle(Discord.ButtonStyle.Link)
-                .setEmoji('<:oi:1154211590309150731>')
-                .setURL('https://discord.gg/WRka7bGqQ2')
+                .setEmoji('🌙')
+                .setURL('https://discord.gg/YDX38W37gG')
             ) 
 
-            return message.reply({content: `<:ohayooo:1154211585749962845> › Olá ${message.author}, eu sou a **${client.user.username}** e é um prazer lhe conhecer! Ei, você pode ver os meus comandos utilizando \`/ajuda\``, components: [buttons]})
+            return message.reply({content: client.FormatEmoji(`#e:lucyGif Eai ${message.author}? eu sou a **${client.user.username}**, e estou aqui para te ajudar, ok? Bom, você pode ver os meus comandos utilizando \`${client.prefix}ajuda\`\n> - #lucynaGif Se quiser me conhecer melhor, recomendo apertar nesse botão abaixo.`), components: [buttons]})
         }
         
         if(!message.content.startsWith(client.prefix) || !message.guild) return;
@@ -30,12 +30,12 @@ module["exports"] = {
         const cmdName = args.shift().toLowerCase();
         const command = client.prefixCommands.get(cmdName) || client.prefixCommands.find(als => als.aliases?.includes(cmdName));
         
-        if (!command){ message.channel.send(client.FormatEmoji(`{e:erro} ${message.author}, ** Esse comando não foi encontrado na minha lista de comandos, verifique se a ortografia está correta.**`)); return;};
+        if (!command){ message.channel.send(client.FormatEmoji(`#e:clientError ${message.author}, Foi mal ai, mas eu não tenho esse comando, recomendo que você utilize **${client.prefix}ajuda**.`)); return;};
         if (command.DevOnly && !client.developers.includes(message.author.id)) {
-            message.reply(client.FormatEmoji(`{e:erro} Apenas meu **desenvolvedor** e **pessoas autorizadas** podem utilizar esse comando.`));
+            message.reply(client.FormatEmoji(`#e:clientError Foi mal ai, mas esse comando não é pra qualquer um usar.`));
             return; }
 
-    // if (!client.developers.includes(message.author.id)) return message.channel.send('**(`☕`) -** Estou em **manutenção**, por favor volte mais tarde!')
+    // if (!client.developers.includes(message.author.id)) return message.channel.send(client.FormatEmoji("#e:clientErro Desculpa, estou recebendo reparos por agora. Volte em uma outra hora."))
         
             const mentions = message.mentions.users;
             const userCache = client.users.cache;
@@ -77,14 +77,14 @@ module["exports"] = {
                 try {
                     command.run(client, message, args);
                 } catch (error) {
-                    console.error('Erro ao executar o comando:', error);
+                    console.error('Ai, tentei executar o comando, mas um errinho apareceu aqui:', error);
                 }
                 return; 
             }
         
             const authorDB = await userDB.findById(message.author.id);
 
-            if (!authorDB) {
+            if (!authorDB && command.requiredDB) {
                 const messageRegisterAuthor = MESSAGE.MESSAGES.VERIFY.AUTHOR
                     .replace(/\[autor\]/g, message.author.username)
                     .replace(/\[comando\]/g, `${client.prefix}registrar`);
@@ -96,7 +96,7 @@ module["exports"] = {
                 const mentioned = message.mentions.users.first();
                 const mentionedDB = await userDB.findById(mentioned.id);
 
-            if (!mentionedDB) {
+            if (!mentionedDB && command.requiredDB) {
                 const messageRegisterUser = MESSAGE.MESSAGES.VERIFY.MENTION
                 .replace(/\[autor\]/g, message.author)
                 .replace(/\[mencao\]/g, mentioned)
