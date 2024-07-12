@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const Botao = require('../../../../functions/buttonCreate');
 const User = require('../../../../database/models/users');
 
@@ -6,27 +6,27 @@ module.exports = {
   name: "daily",
   aliases: ["batercarteira", "bater-carteira", "bater carteira"],
   description: "「Economia」Bata carteira para coletar cartões honestamente.",
+  requiredDB: true,
   category: "economia",
+  run: async (client, message) => {
+    const userDB = await User.findOne({ _id: message.author.id });
 
-  run: async (client, message, args) => {
-    const user = await User.findOne({ _id: message.author.id });
-
-    if (user.daily_time && (Date.now() - user.daily_time < 86400000)) {
-      const nextDaily = Math.floor((user.daily_time + 86400000) / 1000);
+    if (userDB.daily_time && (Date.now() - userDB.daily_time < 86400000)) {
+      const nextDaily = Math.floor((userDB.daily_time + 86400000) / 1000);
       
       return message.reply({ 
         content: client.FormatEmoji(`#e:sonoZZ ${message.author}, bora descançar nós já trampou demais por hoje. Ai, eu te espero aqui amanhã no mesmo horário, ok?\n> **<t:${nextDaily}:F>**.`)
       });
     }
 
-    if (user.daily_progress) {
+    if (userDB.daily_progress) {
       return message.reply({ 
         content: client.FormatEmoji(`#e:davidCP Qual é a sua? não vai escolher o local não?`)
       });
     }
 
-    user.daily_progress = true;
-    await user.save();
+    userDB.daily_progress = true;
+    await userDB.save();
 
     const button = Botao([
       { label:"Metro", customId:`[metro, ${message.author.id}]`, emoji:"🚇", style: 2, },
