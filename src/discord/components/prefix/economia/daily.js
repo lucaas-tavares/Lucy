@@ -13,11 +13,23 @@ function dailyValues(buttonName) {
 
 async function disableButtons(interaction) {
     const button = Botao([
-        { label:"Metro", customId:`metro`, disabled: true, emoji:"🚇", style: 2, },
-        { label:"Beco", customId:`beco`, disabled: true, emoji:"🗑", style: 2, },
-        { label:"Centro", customId:`centro`, disabled: true, emoji:"🌆", style: 2, }
+        { label: "Metro", customId: `metro`, disabled: true, emoji: "🚇", style: 2 },
+        { label: "Beco", customId: `beco`, disabled: true, emoji: "🗑", style: 2 },
+        { label: "Centro", customId: `centro`, disabled: true, emoji: "🌆", style: 2 }
     ]);
     await interaction.message.edit({ components: [button] });
+}
+
+async function addToInventory(userDB, itemName, quantity, description) {
+    const existingItem = userDB.player.inventory.find(item => item.name === itemName);
+
+    if (existingItem) {
+        existingItem.quantity += quantity; 
+    } else {
+        userDB.player.inventory.push({ name: itemName, quantity, description }); 
+    }
+
+    await userDB.save();
 }
 
 async function handleInteraction(client, interaction, buttonName) {
@@ -25,6 +37,14 @@ async function handleInteraction(client, interaction, buttonName) {
     const { amount, value70, value30, message } = dailyValues(buttonName);
 
     userDB.chip += value30;
+
+    await addToInventory(
+        userDB,
+        "chip",
+        value30,
+        "Chips com dados valiosos."
+    );
+
     userDB.daily_time = Date.now();
     userDB.daily_progress = false;
     await userDB.save();

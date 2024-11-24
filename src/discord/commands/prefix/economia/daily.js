@@ -21,17 +21,24 @@ module.exports = {
 
     if (userDB.daily_progress) {
       return message.reply({ 
-        content: client.FormatEmoji(`#e:davidCP Qual é a sua? não vai escolher o local não?`)
+        content: client.FormatEmoji(`#e:davidCP Qual é a sua? não vai escolher o local não?\n-# Se você acha que esta mensagem é um erro, aguarde 15 minutos e tente novamente.`)
       });
     }
 
     userDB.daily_progress = true;
     await userDB.save();
 
+    setTimeout(async () => {
+      if (userDB.daily_progress) {
+        userDB.daily_progress = false;
+        await userDB.save();
+      }
+    }, 900000);
+
     const button = Botao([
-      { label:"Metro", customId:`[metro, ${message.author.id}]`, emoji:"🚇", style: 2, },
-      { label:"Beco", customId:`[beco, ${message.author.id}]`, emoji:"🗑", style: 2, },
-      { label:"Centro", customId:`[centro, ${message.author.id}]`, emoji:"🌆", style: 2, }
+      { label:"Metro", customId:`metro:${message.author.id}`, emoji:"🚇", style: 2, },
+      { label:"Beco", customId:`beco:${message.author.id}`, emoji:"🗑", style: 2, },
+      { label:"Centro", customId:`centro:${message.author.id}`, emoji:"🌆", style: 2, }
     ]);
 
     message.reply({

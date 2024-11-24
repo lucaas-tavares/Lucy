@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 module.exports = {
     name:'ping',
     description:'Veja o ping',
+    category: "util",
     type: Discord.ApplicationCommandType.ChatInput,
     run: async (client, interaction) => {
       

@@ -1,36 +1,43 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const User = require('../../../../database/models/users');
-const Botao = require('../../../../functions/buttonCreate');
 
 module.exports = {
-  name: "registrar",
-  description: "🌹 Atravesse o portal para utilizar meus comandos.",
-  category: "especial",
+  name: 'conectar',
+  aliases: ['registrar', 'iniciar'],
+  description: '🌹 Crie uma conexão ao servidor, para dar início à experiência.',
+  category: 'especial',
 
   run: async (client, message) => {
     let userDB = await User.findOne({ _id: message.author.id });
 
     if (userDB) {
-      return message.reply(client.FormatEmoji('#e:clientError **O que foi?** você realmente acha que pode se registrar denovo? ksksks fof@.'));
+      return message.reply(client.FormatEmoji('#e:lucyLaugh Você já está conectado à experiência!'));
     }
 
-    const button = Botao([
-      { label:"Ver Recompensas", emoji:"👀", customId:`[register-view, ${message.author.id}]`, style: 2, }
-    ])
-    const initialMessage = await message.reply({ content: client.FormatEmoji(`#e:davidCP ${message.author}, estou computando suas informações.\n> - 😥 Isso exige muito de mim, então, pode demorar um pouco, até lá é melhor você aguenta o coração ai...`) });
+    /* const selectMenu = new Discord.StringSelectMenuBuilder()
+      .setCustomId('select-lineage')
+      .setPlaceholder('🤖 - Selecione uma linhagem')
+      .addOptions(
+        options.lineages.map(linhagem => ({
+          label: linhagem.name,
+          description: linhagem.description,
+          value: linhagem.name.toLowerCase()
+        }))
+      ); */
 
-    setTimeout(async () => {
-      await initialMessage.edit(client.FormatEmoji("**#loading A experiência está sendo conectada ao servidor**. Estamos quase lá, não desista agora!"));
-    }, 9000);
+    /* const row = new Discord.ActionRowBuilder().addComponents(selectMenu); */
+
+    const initialMessage = await message.reply({
+      content: client.FormatEmoji(`#loading **A experiência está sendo conectada ao servidor...**`),
+    });
 
     setTimeout(async () => {
       await initialMessage.edit({
-        content: client.FormatEmoji(`#e:lucyChibi ${message.author}, tudo pronto desse lado! Aqui, irei lhe dar **3 coisas**.\n> - #catBlush Ei, faça bom uso dos meus comandos e desfrute ao máximo da experiência.`),
-        components: [button]
+        content: client.FormatEmoji(`#e:lucyHack ${message.author}, a conexão foi bem-sucedida! Você entrou na experiência como:\n> **\`${message.author.username}\` - Humano orgânico - 18 anos **\n-# - A expectativa de vida para os humanos é de: **120 anos.**\n> #e:lucyLaugh Faça bom proveito da sua experiência em Night City!`),
       });
 
-      user = new User({ _id: message.author.id });
-      await user.save();
-    }, 15000);
+      const newUser = new User({ _id: message.author.id });
+      await newUser.save();
+    }, 9000);
   }
-}
+};

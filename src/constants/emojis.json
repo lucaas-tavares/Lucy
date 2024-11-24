@@ -1,22 +1,44 @@
 {
     "emojiGlobal": {
-        "clientDB": "<:lucy:1250974081625624736>",
-        "clientError": "<:error:1207888950648377354>",
-        "clientErro": "<:erro:1222316321027657839>",
-        "clientCheck": "<:check:1207889209432739880>",
-        "mongoDB":"<:mongoDB:1253873971158323264>",
-        "krez":"<:krez:1260694430478762034>",
-        "chip":"<:chip:1260694426309628046>",
-        "loading":"<a:loading:1250979591753830522>",
-        "davidCP":"<:david:1250977655797321768>",
-        "lucyChibi":"<:lucychibi:1250983345916219463>",
-        "lucyGif":"<a:lucyna:1259505096329527338>",
-        "lucynaGif":"<a:lucynaa:1260716846550880358>",
-        "lucyLaugh":"<a:lucylaugh:1260717941603700837>",
-        "killuaBaby":"<:killuaBaby:1250982920089374730>",
-        "killuaGun":"<:killuaGun:1249473963399057550>",
-        "animeSpin":"<a:spin:1100868134665203722>",
-        "sonoZZ":"<a:sono:1259610234851299492>",
-        "catBlush":"<:catblush:1253857817073422366>"
+        "lucyEmojis": {
+            "lucyChibi": "<:lucychibi:1250983345916219463>",
+            "lucyGif": "<a:lucyna:1259505096329527338>",
+            "lucyHack": "<a:Lucyhack:1302792591091302450>",
+            "lucyLaugh": "<a:lucylaugh:1260717941603700837>",
+            "lucySnif": "<a:Lucysnif:1302792664697143308>",
+            "lucyStaring": "<a:Lucystaring:1302794468357050461>",
+            "lucyScan": "<a:lucyscan:1302795991103311943>",
+            "lucySmoke": "<a:lucysmoke:1302796058245468243>",
+            "lucynaGif": "<a:lucynaa:1260716846550880358>"
+        },
+        "utils": {
+            "clientDB": "<:lucy:1250974081625624736>",
+            "clientError": "<:error:1207888950648377354>",
+            "clientErro": "<:erro:1222316321027657839>",
+            "clientCheck": "<:check:1207889209432739880>",
+            "mongoDB": "<:mongoDB:1253873971158323264>",
+            "loading": "<a:loading:1250979591753830522>"
+        },
+        "characters": {
+            "seller": "<:seller:1308876988387295262>",
+            "neox":"<:Neox:1308875644557332570>",
+            "synth":"<:Synth:1308875642955104337>",
+            "biohackers":"<:BioHackers:1308875641130713119>",
+            "streetborn":"<:Streetborn:1308875646247899156>",
+            "purebloods":"<:Purebloods:1308875639788671077>"
+        },
+        "economy": {
+            "chip": "<:chip:1308882097343299737>",
+            "krez": "<:krez:1260694430478762034>"
+        },
+        "others": {
+            "animeSpin": "<a:spin:1100868134665203722>",
+            "catBlush": "<:catblush:1253857817073422366>",
+            "davidCP": "<:david:1250977655797321768>",
+            "killuaBaby": "<:killuaBaby:1250982920089374730>",
+            "killuaGun": "<:killuaGun:1249473963399057550>",
+            "market": "<:hacker:1308880941162168401>",
+            "sonoZZ": "<a:sono:1259610234851299492>"
+        }
     }
 }
