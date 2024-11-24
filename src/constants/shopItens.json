@@ -1,0 +1,112 @@
+{
+  "categories": {
+    "category-weapons": {
+      "name": "Armas",
+      "message": "Chegou na seção de armas. Aqui só os corajosos encontram o que precisam. Preços altos para poder imenso.",
+      "items": {
+        "neon-blade": {
+          "name": "Lâmina de Neon",
+          "description": "Espada de energia cortante. Ideal para confrontos rápidos e letais.",
+          "price": 12000,
+          "message": "Fatiar inimigos em pedaços nunca foi tão estiloso. Prepare-se para brilhar."
+        },
+        "cyber-revolver": {
+          "name": "Revólver Cibernético",
+          "description": "Alta precisão e poder de fogo. Perfeito para tiros certeiros.",
+          "price": 8500,
+          "message": "Quando o silêncio é a melhor arma, conte com essa beleza letal."
+        },
+        "pulse-cannon": {
+          "name": "Canhão de Pulso",
+          "description": "Destruição em massa com ondas de energia pulsante.",
+          "price": 20000,
+          "message": "Apagar tudo do mapa nunca foi tão eficiente. Caro, mas vale cada crédito."
+        }
+      }
+    },
+  "category-consumables": {
+    "name": "Ferramentas",
+    "message": "Manter seus equipamentos funcionais é essencial. Escolha sabiamente.",
+    "items": {
+      "enhancement-kit": {
+        "name": "Kit de Aprimoramento",
+        "description": "Aprimora habilidades dos equipamentos temporariamente.",
+        "price": 2500,
+        "message": "Leve seus gadgets ao limite por um curto período. Cuidado: efeitos colaterais."
+      },
+      "stealth-module": {
+        "name": "Módulo de Furtividade",
+        "description": "Tecnologia de camuflagem para infiltrações discretas.",
+        "price": 3000,
+        "message": "Seja invisível aos olhos inimigos. Alto custo para alta discrição."
+      },
+      "cyber-toolkit": {
+        "name": "Kit de Ferramentas Cibernéticas",
+        "description": "Conserta e melhora implantes rapidamente.",
+        "price": 5000,
+        "message": "Essencial para qualquer cibermercenário. Mantenha seus implantes em perfeito estado."
+      }
+    }
+  },
+  "category-tools": {
+    "name": "Ferramentas",
+    "message": "Aqui é onde você encontra o que precisa para manter seus equipamentos funcionando. Se você é esperto, vai pegar o que precisa. Se for burro, vai acabar quebrando tudo.",
+    "items": {
+      "repair-kit": {
+        "name": "Kit de Reparos",
+        "description": "Essencial para quem depende de equipamentos em missões. Recupera um item quebrado por vez.",
+        "price": 1500,
+        "message": "Não dá pra sobreviver sem isso. Quebrou? Só com um kit desses. E você vai pagar bem por ele."
+      },
+      "life-monitor": {
+        "name": "Monitor de Vida",
+        "description": "Monitore sua saúde, ou melhor, compre uma desculpa para não morrer.",
+        "price": 2000,
+        "message": "Vai saber quando tá na hora de fugir? Com esse monitor, vai. Mas não vai ser barato, claro."
+      },
+      "distractor-device": {
+        "name": "Dispositivo Distrator",
+        "description": "Ideal para criar distrações rápidas durante uma fuga ou para confundir inimigos.",
+        "price": 2500,
+        "message": "O dispositivo perfeito pra quem gosta de fugir ou enganar. Isso aqui vai fazer o inimigo perder o foco, mas vai sair caro."
+      }
+    }
+  },
+  "category-pureblood": {
+    "name": "Seção Orgânica",
+    "message": "Aumente suas capacidades orgânicas, mas esteja pronto para pagar o preço.",
+    "items": {
+      "synthetic-vitamins": {
+        "name": "Vitaminas Sintéticas",
+        "description": "Melhora temporária na resistência física e mental.",
+        "price": 1000,
+        "message": "Fortaleça corpo e mente, mas cuidado com os efeitos a longo prazo."
+      },
+      "bio-enhancement": {
+        "name": "Aprimoramento Biológico",
+        "description": "Aumenta habilidades físicas. Eficiência limitada.",
+        "price": 4000,
+        "message": "Transforme-se num super-humano. Use sabiamente, riscos elevados."
+      },
+      "regeneration-serum": {
+        "name": "Soro de Regeneração",
+        "description": "Recupera células danificadas. Uso excessivo perigoso.",
+        "price": 6000,
+        "message": "Volte ao combate rapidamente. Evite uso contínuo para prevenir mutações."
+      }
+    }
+  },
+    "category-currency": {
+      "name": "Vender itens",
+      "message": "Transforme itens sobrando em dinheiro. Lembre-se, eu decido os preços.",
+      "items": {
+        "chip": {
+          "name": "chip",
+          "description": "Venda chips contendo dados valiosos. Conversão por krez.",
+          "price": 2,
+          "message": "Transforme informações em dinheiro. Negocie seus chips com sabedoria."
+        }
+      }
+    }
+  }
+}

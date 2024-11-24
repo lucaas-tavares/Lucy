@@ -1,0 +1,92 @@
+{
+  "specializations": [
+    {
+      "name": "Netrunner",
+      "description": "Hackers especializados em manipular tecnologia e explorar redes.",
+      "unlock_criteria": {
+        "hacks_successful": 10,
+        "required_implant": "Interface Neural Avançada"
+      },
+      "attributes": {
+        "hp": 70,
+        "energy": 100,
+        "intelligence": 15,
+        "strength": 5,
+        "resilience": 8
+      },
+      "bonuses": {
+        "xp_gain_hack": 0.15,
+        "resistance_to_hacks": 0.10
+      },
+      "weaknesses": {
+        "reduced_physical_resistance": -0.10
+      }
+    },
+    {
+      "name": "Solo",
+      "description": "Mercenários treinados para combate físico e sobrevivência.",
+      "unlock_criteria": {
+        "melee_combats_won": 5,
+        "required_implant": "Braço Cibernético de Combate"
+      },
+      "attributes": {
+        "hp": 120,
+        "energy": 50,
+        "intelligence": 5,
+        "strength": 15,
+        "resilience": 12
+      },
+      "bonuses": {
+        "combat_damage_npc": 0.10,
+        "damage_reduction_bosses": 0.10
+      },
+      "weaknesses": {
+        "low_energy_pool": -0.20
+      }
+    },
+    {
+      "name": "Techie",
+      "description": "Engenheiros especializados em construir e melhorar equipamentos.",
+      "unlock_criteria": {
+        "items_created_upgraded": 3,
+        "required_implant": "Modificador de Habilidades Técnicas"
+      },
+      "attributes": {
+        "hp": 90,
+        "energy": 80,
+        "intelligence": 12,
+        "strength": 8,
+        "resilience": 10
+      },
+      "bonuses": {
+        "upgrade_cost_reduction": 0.10,
+        "rare_item_chance": 0.15
+      },
+      "weaknesses": {
+        "reduced_physical_damage": -5
+      }
+    },
+    {
+      "name": "Fixer",
+      "description": "Especialistas em negociações e contratos no submundo.",
+      "unlock_criteria": {
+        "missions_completed_economy": 5,
+        "coins_earned_transactions": 1000
+      },
+      "attributes": {
+        "hp": 85,
+        "energy": 60,
+        "intelligence": 10,
+        "strength": 6,
+        "resilience": 8
+      },
+      "bonuses": {
+        "coins_from_missions": 0.20,
+        "market_discount": 0.15
+      },
+      "weaknesses": {
+        "reduced_combat_damage": -0.05
+      }
+    }
+  ]
+}
