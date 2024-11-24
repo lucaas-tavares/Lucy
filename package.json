@@ -1,11 +1,13 @@
 {
   "dependencies": {
+    "child_process": "^1.0.2",
     "cli-table3": "^0.6.4",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
     "mongoose": "^8.4.0",
-    "strcolorize": "^1.1.8"
+    "strcolorize": "^1.1.8",
+    "util": "^0.12.5"
   },
   "name": "mei-slash",
   "version": "1.0.0",
